@@ -1,27 +1,23 @@
 angular.module('video-player')
-
 .directive('app', function() {
 
   return {
 
-    scope: {
-      videos: '<'
+    controller: function() {
+      this.videos = exampleVideoData;
+      this.currentVideo = exampleVideoData[0];
+
+      this.videoChangeHandler = (video) => { this.currentVideo = video; console.log( video );}
     },
 
-    // controller: function($scope) {
-    //   $scope.videos = exampleVideoData;
-    //   $scope.carName = 'Volvo';
-    //   $scope.currentVideo = exampleVideoData[0]
-    // },
-    controller: function() {
-      this.test = 'hello';
-      // this.videos = exampleVideoData;
+    scope: {
     },
 
     controllerAs: 'ctrl',
     bindToController: true,
     restrict: 'E',
     templateUrl: 'src/templates/app.html'
-
   };
 });
+
+

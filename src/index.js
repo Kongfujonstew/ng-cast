@@ -5,6 +5,3 @@ angular.module('video-player', [])
     'https://www.youtube.com/**'
   ]);
 })
-.controller( 'video-player', function($scope) {
-  $scope.videos = exampleVideoData;
-});

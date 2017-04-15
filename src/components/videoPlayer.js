@@ -4,21 +4,20 @@ angular.module('video-player')
 .directive('videoPlayer', function() {
   return {
 
-
     scope: {
-      videos: '<',
+      currentVideo: '<'
     },
 
-    // controller: function() {
-    //   // this.videos = exampleVideoData;
-    //   this.videos = 'hi';
-    // },
-    controller: function($scope) {
-      $scope.currentVideo = exampleVideoData[0]
-    },
+    controller: [$scope, function($scope) {
+      console.log( this.currentVideo );
+      this.getVideoUrl = (video) => {
+        return "https://www.youtube.com/embed/" + this.currentVideo.id.videoId;
+      }
+      // this.currentVideoURL = "https://www.youtube.com/embed/" + this.currentVideo.id.videoId;
+    }],
 
-    controllerAs: 'ctrl',
     bindToController: true,
+    controllerAs: 'ctrl',
     restrict: 'E',
 
     templateUrl: 'src/templates/videoPlayer.html'
