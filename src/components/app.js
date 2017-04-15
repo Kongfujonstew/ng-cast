@@ -2,21 +2,20 @@ angular.module('video-player')
 
 .directive('app', function() {
 
-  // $scope.videos = exampleVideoData;
   return {
 
     scope: {
-      videos: '=',
+      videos: '<'
     },
 
-    // controller: function() {
-    //   // this.videos = exampleVideoData;
-    //   this.videos = 'hi';
+    // controller: function($scope) {
+    //   $scope.videos = exampleVideoData;
+    //   $scope.carName = 'Volvo';
+    //   $scope.currentVideo = exampleVideoData[0]
     // },
-    controller: function($scope) {
-      $scope.videos = exampleVideoData;
-      $scope.carName = 'Volvo';
-      $scope.currentVideo = exampleVideoData[0]
+    controller: function() {
+      this.test = 'hello';
+      // this.videos = exampleVideoData;
     },
 
     controllerAs: 'ctrl',
