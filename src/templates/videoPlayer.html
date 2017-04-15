@@ -1,9 +1,9 @@
 <div class="video-player">
   <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1w8Z0UOXVaY" allowFullScreen></iframe>
+    <iframe class="embed-responsive-item" ng-src={{}} allowFullScreen></iframe>
   </div>
   <div class="video-player-details">
-    <h3>{{ currentVideo.snippet.title }}</h3>
-    <div>{{ currentVideo.snippet.description }}</div>
+    <h3>{{ ctrl.currentvideo.snippet.title }}</h3>
+    <div>{{ ctrl.currentvideo.snippet.description }}</div>
   </div>
 </div>
