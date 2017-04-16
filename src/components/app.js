@@ -1,14 +1,29 @@
 angular.module('video-player')
+
+
 .directive('app', function() {
 
   return {
 
-    controller: function() {
+    controller: [ 'youTube', function(youTube) {
       this.videos = exampleVideoData;
       this.currentVideo = exampleVideoData[0];
 
-      this.videoChangeHandler = (video) => { this.currentVideo = video; console.log( video );}
-    },
+      this.selectVideo = (video) => { 
+        this.currentVideo = video;
+      };
+
+      this.searchResults = (results) => {
+        this.videos = results;
+        this.currentVideo = results[0];
+      };
+
+      this.searchEntryHandler = (searchTerms) => {
+        youTube.search(searchTerms, this.searchResults);
+      };
+
+      youTube.search( 'perfect golf swing', this.searchResults );
+    }],
 
     scope: {
     },

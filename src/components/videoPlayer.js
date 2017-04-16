@@ -5,16 +5,11 @@ angular.module('video-player')
   return {
 
     scope: {
-      currentVideo: '<'
+      video: '<',
     },
 
-    controller: [$scope, function($scope) {
-      console.log( this.currentVideo );
-      this.getVideoUrl = (video) => {
-        return "https://www.youtube.com/embed/" + this.currentVideo.id.videoId;
-      }
-      // this.currentVideoURL = "https://www.youtube.com/embed/" + this.currentVideo.id.videoId;
-    }],
+    controller: function( $scope ) {
+    },
 
     bindToController: true,
     controllerAs: 'ctrl',

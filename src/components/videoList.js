@@ -7,10 +7,12 @@ angular.module('video-player')
 
     scope: {
       videos: '<',
-      videoChangeHandler: '<'
+      onClick: '<'
     },
 
     controller: function() {
+
+     
     },
 
     controllerAs: 'ctrl',

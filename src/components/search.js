@@ -2,18 +2,12 @@ angular.module('video-player')
 
 .directive('search', function() {
   return {
-
-
-
+    
     scope: {
-
+      result: '<',
     },
 
     controller: function() {
-      this.searchFunc = function() {
-        //youtubeSearch
-        console.log(2);
-      }
     },
 
     controllerAs: 'ctrl',
